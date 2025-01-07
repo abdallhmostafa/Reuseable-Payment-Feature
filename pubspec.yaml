@@ -10,9 +10,11 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.8
+  dartz: ^0.10.1
   dio: ^5.7.0
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.6
   flutter_stripe: ^11.3.0
   flutter_svg: ^2.0.16
   u_credit_card: ^1.4.0

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payment_feature/features/checkout/model/cardit_card_model.dart';
+import 'package:payment_feature/features/checkout/data/model/cardit_card_model.dart';
 import 'package:payment_feature/features/checkout/presentation/view/thank_you_view.dart';
 import 'package:payment_feature/features/checkout/presentation/widgets/card_section.dart';
 import 'package:payment_feature/features/checkout/presentation/widgets/credit_card_form.dart';

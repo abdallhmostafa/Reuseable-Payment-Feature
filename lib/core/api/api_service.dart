@@ -1,16 +1,16 @@
 import 'package:dio/dio.dart';
 
 class ApiService {
+  ApiService._();
+  static final ApiService _instance = ApiService._();
+  factory ApiService() => _instance;
   final Dio _dio = Dio(
     BaseOptions(
       baseUrl: 'https://api.stripe.com/v1/',
       sendTimeout: const Duration(seconds: 10),
       connectTimeout: const Duration(seconds: 10),
       receiveTimeout: const Duration(seconds: 10),
-      headers: {
-        'Content-Type': '*/*',
-        'Accept': '*/*',
-      },
+      contentType: 'application/x-www-form-urlencoded',
     ),
   );
 

@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:payment_feature/core/theme/app_text_style.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.text, required this.onPressed});
+  const CustomButton(
+      {super.key,
+      required this.text,
+      required this.onPressed,
+      this.isLoading = false});
   final String text;
+  final bool isLoading;
   final VoidCallback onPressed;
 
   @override
@@ -17,11 +22,16 @@ class CustomButton extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         ),
-        child: Text(
-          text,
-          style: AppTextStyle.style24W500.copyWith(
-            color: Colors.white,
-          ),
-        ));
+        child: isLoading
+            ? const CircularProgressIndicator(
+                color: Colors.white,
+                strokeWidth: 2.5,
+              )
+            : Text(
+                text,
+                style: AppTextStyle.style24W500.copyWith(
+                  color: Colors.white,
+                ),
+              ));
   }
 }

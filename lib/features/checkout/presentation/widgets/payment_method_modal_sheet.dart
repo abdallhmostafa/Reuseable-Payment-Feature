@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payment_feature/features/checkout/presentation/widgets/custom_button.dart';
+import 'package:payment_feature/features/checkout/presentation/widgets/custom_button_bloc_consumer.dart';
 import 'package:payment_feature/features/checkout/presentation/widgets/payment_method_section.dart';
 
 class PaymentMethodModalSheet extends StatelessWidget {
@@ -24,7 +24,7 @@ class PaymentMethodModalSheet extends StatelessWidget {
         spacing: 20,
         children: [
           PaymentMethodSection(),
-          CustomButton(text: 'Continue', onPressed: () {})
+          CustomButtonBlocConsumer(),
         ],
       ),
     );

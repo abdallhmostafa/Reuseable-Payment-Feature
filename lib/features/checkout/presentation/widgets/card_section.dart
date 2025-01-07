@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payment_feature/features/checkout/model/cardit_card_model.dart';
+import 'package:payment_feature/features/checkout/data/model/cardit_card_model.dart';
 import 'package:u_credit_card/u_credit_card.dart';
 
 class CardSection extends StatelessWidget {

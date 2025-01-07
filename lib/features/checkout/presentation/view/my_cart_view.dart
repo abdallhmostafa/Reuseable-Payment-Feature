@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:payment_feature/core/api/api_service.dart';
 import 'package:payment_feature/core/assets/app_assets.dart';
 import 'package:payment_feature/core/common/widgets/custom_app_bar.dart';
 import 'package:payment_feature/core/theme/app_text_style.dart';
+import 'package:payment_feature/core/utils/stripe_services.dart';
+import 'package:payment_feature/features/checkout/data/repo/checkout_repo.dart';
+import 'package:payment_feature/features/checkout/presentation/manager/cubit/payment_cubit.dart';
 import 'package:payment_feature/features/checkout/presentation/widgets/custom_button.dart';
 import 'package:payment_feature/features/checkout/presentation/widgets/payment_method_modal_sheet.dart';
 import 'package:payment_feature/features/checkout/presentation/widgets/text_and_description_row_widget.dart';
@@ -42,7 +47,16 @@ class MyCartView extends StatelessWidget {
             onPressed: () {
               showModalBottomSheet(
                   context: context,
-                  builder: (context) => const PaymentMethodModalSheet());
+                  builder: (context) => BlocProvider(
+                        create: (context) => PaymentCubit(
+                          CheckoutRepo(
+                            StripeServices(
+                              ApiService(),
+                            ),
+                          ),
+                        ),
+                        child: const PaymentMethodModalSheet(),
+                      ));
             },
             text: 'Pay Now',
           ),
