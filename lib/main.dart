@@ -31,3 +31,9 @@ class PaymentFeature extends StatelessWidget {
 // 2. initialize the payment sheet
 // 3. display the payment sheet
 // 4. handle the payment result
+
+// thus: 
+// PaymentIntentInputModel input = PaymentIntentInputModel(
+//   amount: '100',
+//   currency: 'usd',
+// );

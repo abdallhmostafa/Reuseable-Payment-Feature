@@ -34,10 +34,12 @@ class CustomButtonBlocConsumer extends StatelessWidget {
           text: 'Continue',
           onPressed: () {
             context.read<PaymentCubit>().makePayment(
-                    input: PaymentIntentInputModel(
-                  amount: '100',
-                  currency: 'usd',
-                ));
+                  input: PaymentIntentInputModel(
+                    amount: '100',
+                    customerId: 'cus_RXiqqIXRxzXPpB',
+                    currency: 'usd',
+                     ),
+                );
           },
           isLoading: state is PaymentLoading,
         );

@@ -17,16 +17,18 @@ class ApiService {
   Future<Response> post(
       {required String url,
       required body,
-      required String token,
+      String? token,
+      Map<String, dynamic>? headers,
       Map<String, dynamic>? queryParameters}) async {
     return await _dio.post(
       url,
       queryParameters: queryParameters,
       data: body,
       options: Options(
-        headers: {
-          'Authorization': 'Bearer $token',
-        },
+        headers: headers ??
+            ({
+              'Authorization': 'Bearer $token',
+            }),
       ),
     );
   }
